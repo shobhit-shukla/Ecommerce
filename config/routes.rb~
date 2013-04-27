@@ -3,7 +3,7 @@ Shobhit1::Application.routes.draw do
   resources :homes
 
   root to: "homes#index"
-
+  match '/sign_in' => 'consumers#sign_in'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
