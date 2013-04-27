@@ -1,7 +1,8 @@
 Shobhit1::Application.routes.draw do
   resources :consumers
+  resources :homes
 
-  root to: "consumers#index"
+  root to: "homes#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
