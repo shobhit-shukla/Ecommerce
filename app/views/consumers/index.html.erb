@@ -3,8 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Email</th>
-    <th>Password</th>
+    <th>Email</th>    
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +13,6 @@
   <tr>
     <td><%= consumer.name %></td>
     <td><%= consumer.email %></td>
-    <td><%= consumer.password %></td>
     <td><%= link_to 'Show', consumer %></td>
     <td><%= link_to 'Edit', edit_consumer_path(consumer) %></td>
     <td><%= link_to 'Destroy', consumer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

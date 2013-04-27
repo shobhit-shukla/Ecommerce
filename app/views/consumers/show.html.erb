@@ -1,19 +1,13 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @consumer.name %>
-</p>
+<div class="row">
+  <aside class="span4">
+    <section>
+     <h1><%= @consumer.name %></h1>
+    </section>  
+  </aside>
+</div>
 
-<p>
-  <b>Email:</b>
-  <%= @consumer.email %>
-</p>
 
-<p>
-  <b>Password:</b>
-  <%= @consumer.password %>
-</p>
 
 
 <%= link_to 'Edit', edit_consumer_path(@consumer) %> |

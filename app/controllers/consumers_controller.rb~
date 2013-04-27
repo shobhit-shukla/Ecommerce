@@ -3,7 +3,6 @@ class ConsumersController < ApplicationController
   # GET /consumers.json
   def index
     @consumers = Consumer.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @consumers }
@@ -44,7 +43,7 @@ class ConsumersController < ApplicationController
 
     respond_to do |format|
       if @consumer.save
-        format.html { redirect_to @consumer, notice: 'Consumer was successfully created.' }
+        format.html { redirect_to @consumer, notice: 'Sign was successfull.' }
         format.json { render json: @consumer, status: :created, location: @consumer }
       else
         format.html { render action: "new" }
