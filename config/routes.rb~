@@ -1,9 +1,10 @@
 Shobhit1::Application.routes.draw do
   resources :consumers
   resources :homes
+  resources :sessions
 
   root to: "homes#index"
-  match '/sign_in' => 'consumers#sign_in'
+  match '/sign_in', to: 'sessions#new'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
