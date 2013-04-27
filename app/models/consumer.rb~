@@ -1,7 +1,5 @@
 class Consumer < ActiveRecord::Base
-  attr_accessible :email, :name, 
-  :email has_presence: true
-
+  attr_accessible :email, :name, :password 
 def index
 end
 
