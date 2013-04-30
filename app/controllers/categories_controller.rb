@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
       flash.now[:error] = "There is error"
       render 'categories/index'
     end
-  end e
+  end 
  
   def show      
     @category = Category.find(params[:id])
