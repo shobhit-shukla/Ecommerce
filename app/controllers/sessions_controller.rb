@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
  def create
   consumer = Consumer.find_by_email(params[:session][:email].downcase)
    if consumer && consumer.authenticate(params[:session][:password])
+      session[:consumer_id] = consumer.id
       sign_in consumer
       redirect_to consumer
    else

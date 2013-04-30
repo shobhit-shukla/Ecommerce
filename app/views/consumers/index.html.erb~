@@ -1,8 +1,8 @@
-<h1>Listing consumers</h1>
+<h1>Users</h1>
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>Name</th><th></th>
     <th>Email</th>    
     <th></th>
     <th></th>

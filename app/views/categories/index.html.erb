@@ -1,15 +1,23 @@
-<div class=span6 offset3>
-<%= form_for(@category) do |f| %>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit "ADD" ,class: "btn btn-primary btn-large" %>
-  </div>
+<div class="row">
+<aside class="span4">
+<%= link_to 'Add Category', new_category_path ,class: "btn btn-large btn-primary" %>	
+</aside>
+<table>
+  <tr>
+    <th>Category</th>        
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+    <td><%= category.title %></td>
+    <td><%= link_to 'Show', category %></td>
+    <td><%= link_to 'Edit', edit_category_path(category) %></td>
+    <td><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
 <% end %>
+</table>
+
 </div>
