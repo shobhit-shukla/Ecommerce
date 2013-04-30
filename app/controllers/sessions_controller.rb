@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
  def create
   consumer = Consumer.find_by_email(params[:session][:email].downcase)
    if consumer && consumer.authenticate(params[:session][:password])
-     redirect_to root_url
+      sign_in consumer
+      redirect_to consumer
    else
      flash.now[:error] = 'Invalid email/password combination'
      render 'new'
@@ -14,6 +15,8 @@ class SessionsController < ApplicationController
  end 
  
  def destroy
+    sign_out
+    redirect_to root_url
  end
 
 end

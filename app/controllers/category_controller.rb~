@@ -1,0 +1,7 @@
+class CategoryController < ApplicationController
+  def index
+     @categeries = Category.all
+  end
+ def create 
+ end 
+end

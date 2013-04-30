@@ -2,9 +2,11 @@ Shobhit1::Application.routes.draw do
   resources :consumers
   resources :homes
   resources :sessions
+  resources :categories
 
   root to: "homes#index"
   match '/sign_in', to: 'sessions#new'
+  match '/sign_out',to: 'sessions#destroy' ,via: :delete
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
