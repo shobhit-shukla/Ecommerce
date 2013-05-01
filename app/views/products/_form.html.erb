@@ -1,14 +1,15 @@
-<div class=span6 offset3>
+<div class="span6 offset3">
 <%= form_for(@product) do |f| %>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
-</ul>
-</ul>
-  <div class="field">
+  <%= f.label :Category %><br/>
+  <%= select_tag "technician",options_from_collection_for_select(Category.all, "id", "title"),:class=>"span6 chzn-select",:size => "1x10" %>
+  
+  <div >
     <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :size => "30x10" %>
   </div>
   
     <%= f.submit "ADD" ,class: "btn btn-primary btn-large" %>
