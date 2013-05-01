@@ -1,8 +1,11 @@
 Shobhit1::Application.routes.draw do
+  get "products/new"
+
   resources :consumers
   resources :homes
   resources :sessions
   resources :categories
+  resources :products
 
   root to: "homes#index"
   match '/sign_in', to: 'sessions#new'

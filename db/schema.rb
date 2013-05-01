@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130429135938) do
+ActiveRecord::Schema.define(:version => 20130501083205) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -34,5 +34,15 @@ ActiveRecord::Schema.define(:version => 20130429135938) do
 
   add_index "consumers", ["email"], :name => "index_consumers_on_email", :unique => true
   add_index "consumers", ["remember_token"], :name => "index_consumers_on_remember_token"
+
+  create_table "products", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "products", ["category_id", "created_at"], :name => "index_products_on_category_id_and_created_at"
 
 end

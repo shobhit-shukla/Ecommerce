@@ -1,6 +1,9 @@
 <% provide(:title, 'Home') %>
+<%# <% if signed_in? %>
+    <%# <%= render 'categories/index' %>
+<%# <% else %>
 <div class ="center hero-unit">
 <h1>Home Screen</h1></br>
 <%= link_to 'Sign Up' , new_consumer_path ,class: " btn btn-large btn-primary" %>
 </div>
-
+<%# <% end %>

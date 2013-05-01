@@ -1,0 +1,17 @@
+<div class=span6 offset3>
+<%= form_for(@product) do |f| %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+</ul>
+</ul>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  
+    <%= f.submit "ADD" ,class: "btn btn-primary btn-large" %>
+  </div>
+<% end %>
+</div>

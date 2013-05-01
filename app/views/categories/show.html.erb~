@@ -1,4 +1,4 @@
-<div class="row">
+<div class="categories">
   <aside class="span4">
     <section>
      <h1><%= @category.title %></h1>

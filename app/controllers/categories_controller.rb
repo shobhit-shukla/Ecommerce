@@ -11,7 +11,6 @@ class CategoriesController < ApplicationController
       flash.now[:success] = "Category created successfully "
       redirect_to categories_path
     else
-      flash.now[:error] = "There is error"
       render 'categories/new'
     end
   end 
