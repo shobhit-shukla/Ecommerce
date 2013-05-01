@@ -1,4 +1,5 @@
-<div class=span6 offset3>
+<h2>Add Category</h2>
+<div class="span6 offset3">
 <%= form_for(@category) do |f| %>
   <div class="field">
     <%= f.label :title %><br />

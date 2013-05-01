@@ -1,5 +1,5 @@
 <div class ="row">
-<h2>Category</h2>
+<h1>Categories</h1>
 <aside>
 <%= link_to 'Add Category', new_category_path ,class: "btn btn-primary btn-large" %>	
 </aside>

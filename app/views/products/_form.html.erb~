@@ -1,3 +1,4 @@
+<h2>Add product</h2>
 <div class="span6 offset3">
 <%= form_for(@product) do |f| %>
   <div class="field">
@@ -5,7 +6,10 @@
     <%= f.text_field :title %>
   </div>
   <%= f.label :Category %><br/>
-  <%= select_tag "technician",options_from_collection_for_select(Category.all, "id", "title"),:class=>"span6 chzn-select",:size => "1x10" %>
+<%#  <%= f.select :category_id, @categories.map {|r| [r.title,r.id] } %>
+<%#  <%= collection_select(:product, :category_id, Category.all, :id, :title,:size => "1x10") %>
+
+  <%= select_tag "category_id",options_from_collection_for_select(Category.all, "id", "title"),:class=>"span6 chzn-select",:size => "1x10" %>
   
   <div >
     <%= f.label :content %><br />
