@@ -5,13 +5,11 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
+   <div class="field">
   <%= f.label :Category %><br/>
-<%#  <%= f.select :category_id, @categories.map {|r| [r.title,r.id] } %>
-<%#  <%= collection_select(:product, :category_id, Category.all, :id, :title,:size => "1x10") %>
-
-  <%= select_tag "category_id",options_from_collection_for_select(Category.all, "id", "title"),:class=>"span6 chzn-select",:size => "1x10" %>
-  
-  <div >
+  <%= f.collection_select :category_id, Category.all, :id, :title,:class=>"span6 chzn- select",:size => "1x10",:prompt => "Select a Category" %>
+   </div>
+   
     <%= f.label :content %><br />
     <%= f.text_area :content, :size => "30x10" %>
   </div>

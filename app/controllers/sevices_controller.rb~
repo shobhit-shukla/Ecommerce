@@ -1,0 +1,16 @@
+class SevicesController < ApplicationController
+
+def sign_in
+array_my = []
+array_my << {:Name => "Test",:ID =>"test"}
+render :json => array_my
+#consumer = Consumer.find_by_email(params[:session][:email].downcase)
+   #if consumer && consumer.authenticate(params[:session][:password])
+    #  session[:consumer_id] = consumer.id
+     # sign_in consumer
+      #redirect_to consumer
+   #else
+    # flash.now[:error] = 'Invalid email/password combination'
+     #render 'new'
+   #end
+end

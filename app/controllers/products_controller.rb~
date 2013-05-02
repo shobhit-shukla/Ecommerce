@@ -8,13 +8,18 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @category=Category.new
-    @product = @category.products.build(params[:product])
+     @product = Product.new(params[:product])
     if @product.save
-      flash.now[:success] = "Product created successfully "
-      redirect_to products_path
+        flash[:notice] = "Successfully created product."
+        redirect_to @product
     else
-      render 'products/new'
+      render :action => 'new'
     end
-  end 
+  end
+  
+  def show
+  end
+
+  
+
 end

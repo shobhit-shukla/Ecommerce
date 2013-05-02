@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
-  attr_accessible :category_id, :content, :title
+  attr_accessible :category_id, :content, :title 
+
+  
   belongs_to:category
 
   validates :title, presence: true
@@ -9,4 +11,5 @@ class Product < ActiveRecord::Base
 
   default_scope order: 'products.created_at DESC'
 
+  
 end
