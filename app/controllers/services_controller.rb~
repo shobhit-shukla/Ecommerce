@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  protect_from_forgery :except => [:sign_in]
+ # protect_from_forgery :except => [:sign_in],[:ad_post]
   def sign_in
     #array_my = []
     #array_my << {:Name => "Test",:ID =>"test"}
@@ -13,15 +13,14 @@ class ServicesController < ApplicationController
       end
    end
   
-   def sign_up
-    @consumer = Consumer.new(params[:consumer])
-     respond_to do |format|
-       if @consumer.save
-         render json: @consumer
-       else       
-         render json: @consumer.errors
-       end
-     end
+   def add_ads
+     ad_post=AdPost.new({:name =>params[:name], :price =>params[:price], :description=>params[:description]}) 
+      if ad_post.save
+        flash = "Successful"
+        render :json => flash
+      else
+      render :json => error
+      end
    end
 
 end

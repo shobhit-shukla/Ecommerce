@@ -1,19 +1,20 @@
-<h2>Add product</h2>
+<h2>Add Ads</h2>
 <div class="span6 offset3">
-<%= form_for(@product) do |f| %>
+<%= form_for(@ad_post) do |f| %>
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </div>
    <div class="field">
-  <%= f.label :Category %><br/>
-  <%= f.collection_select :category_id, Category.all, :id, :title,:class=>"span6 chzn- select",:size => "1x10",:prompt => "Select a Category" %>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <%# <%= f.collection_select :category_id, Category.all, :id, :title,:class=>"span6 chzn- select",:size => "1x10",:prompt => "Select a Category" %>
    </div>
-   <%# <%= f.file_field :photo %>
+   	 <%= f.file_field :photo %>
 
   <div >
-    <%= f.label :content %><br />
-    <%= f.text_area :content, :size => "30x10" %>
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :size => "30x10" %>
   </div>
 <p>  
     <%= f.submit "ADD" ,class: "btn btn-primary btn-large" %>

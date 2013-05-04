@@ -8,6 +8,8 @@ Shobhit1::Application.configure do
 
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
+  
+  Paperclip.options[:command_path] = "/usr/bin/identify"
 
   config.active_record.whitelist_attributes = false
 

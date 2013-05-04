@@ -6,12 +6,14 @@ Shobhit1::Application.routes.draw do
   resources :sessions
   resources :categories
   resources :products
+  resources :ad_posts
   resources :services do
                          member do
                            post  'sign_in'
-		           end
+			   post  'add_ads'
+		         end
                       end
-  resources :ad_posts
+  
   root to: "homes#index"
   match '/sign_in', to: 'sessions#new'
   match '/sign_out',to: 'sessions#destroy' ,via: :delete

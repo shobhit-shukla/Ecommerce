@@ -1,2 +1,18 @@
-<h1>Ads Posted<h1>
+<div class="row">
+<h1>Ads Posted</h1>
+<aside>
+<%= link_to "Add Ads", new_ad_post_path ,class:"btn btn-primary btn-large" %>
+</aside>
 
+<div class="span8 offset3">        
+ <div class="categories">
+  <% @ad_posts.each do |ad_post| %>  
+    <li><%= ad_post.name %><br/>
+    <%= link_to 'Show', ad_post %>
+    <%= link_to 'Edit', edit_ad_post_path(ad_post) %>
+    <%= link_to 'Delete', ad_post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  
+<% end %>
+</div>
+</div>
+</div>
