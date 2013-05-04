@@ -22,5 +22,18 @@ class ServicesController < ApplicationController
       render :json => error
       end
    end
+  
+   def show_ads
+     ad_post = AdPost.all
+     render :json =>ad_post
+   end
 
+   def sign_up
+    consumer = Consumer.new(params[:consumer])
+      if consumer.save
+         render json: consumer
+      else
+        render json: consumer.errors
+      end
+   end
 end

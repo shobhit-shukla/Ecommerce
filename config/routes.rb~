@@ -11,6 +11,8 @@ Shobhit1::Application.routes.draw do
                          member do
                            post  'sign_in'
 			   post  'add_ads'
+			   get   'show_ads'
+			   post  'sign_up'		
 		         end
                       end
   
