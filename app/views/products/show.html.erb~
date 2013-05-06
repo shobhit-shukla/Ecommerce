@@ -5,16 +5,16 @@
 <%= simple_format h(@product.content) %>
 
 
-<% unless @product.category.nil? %>
+ <% unless @product.category.nil? %>
 <p>
   <strong>Category:</strong>
   <%= link_to h(@product.category.title), @product.category %>
 </p>
-<% end %>
+ <% end %>
 
 <p>
-  <%= link_to "Edit", edit_product_path(@product) %> |
-  <%= link_to "Destroy", @product, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Edit", edit_product_path(@product) %> 
+  <%= link_to "Destroy", @product, :confirm => 'Are you sure?', :method => :delete %> 
   <%= link_to "View All", products_path %>
 </p>
 

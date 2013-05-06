@@ -22,7 +22,36 @@ class ServicesController < ApplicationController
       render :json => error
       end
    end
+
+   def add_pros
+     #picture= ActiveSupport::Base64.decode64(params[:pic])
+    # photo = Product.new(params[:pic])
+     #  data = StringIO.new(Base64.decode64(params[:base64_string]))
+      # data.class.class_eval { attr_accessor :original_filename, :content_type }
+       #data.original_filename = "screenshots.jpg"
+       #data.content_type = "image/jpg"
+       #photo.image = data
+
+
+     product=Product.new(params[:product]) 
+
+      if product.save
+        flash = "Successful"
+        render :json => flash
+      else
+      render :json => error	
+      end
+   end
   
+   def show_pros
+	array_of_pr = []     
+	product=Product.all
+	product.each do |pr|
+	array_of_pr << {:url => pr.pic.url(:small),:category_id => 		       pr.category_id,:title => pr.title, :content =>pr.content}
+        end
+     render :json =>array_of_pr
+   end
+   
    def show_ads
      ad_post = AdPost.all
      render :json =>ad_post
@@ -33,7 +62,14 @@ class ServicesController < ApplicationController
       if consumer.save
          render json: consumer
       else
-        render json: consumer.errors
+	flash = "Fail"
+	render :json => flash
+       # render json: consumer.errors
       end
    end
+  
+  def categories_show
+    category=Category.all
+    render :json =>category	
+  end
 end

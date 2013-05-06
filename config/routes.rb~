@@ -12,7 +12,10 @@ Shobhit1::Application.routes.draw do
                            post  'sign_in'
 			   post  'add_ads'
 			   get   'show_ads'
-			   post  'sign_up'		
+			   post  'sign_up'
+			   post  'add_pros'			
+			   get   'categories_show'
+                           get   'show_pros'
 		         end
                       end
   

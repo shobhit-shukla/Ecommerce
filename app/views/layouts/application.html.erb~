@@ -17,9 +17,9 @@
      <ul class="nav pull-right">
 	     <li> <%= link_to 'Home'     , homes_path %></li>
          <% if signed_in? %>
-	     <li><%= link_to "Ads", ad_posts_path %></li>	
-             <li><%= link_to "Categories", categories_path %></li>	
-             <li><%= link_to "Products", products_path %></li>
+             <li><%= link_to "Ads", products_path %></li>
+	     <li><%= link_to "Products", ad_posts_path %></li>	
+             <li><%= link_to "Categories", categories_path %></li>
              <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b></a>
