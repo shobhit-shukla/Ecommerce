@@ -8,6 +8,8 @@
  <div class="categories">
   <% @products.each do |product| %>  
     <li><%= product.title %><br/>
+    Price :<%= product.price %><br/>
+    <%= image_tag product.pic.url(:small) %>
     <%= link_to 'Show', product %>
     <%= link_to 'Edit', edit_product_path(product) %>
     <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></li>

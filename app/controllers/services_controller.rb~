@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
- # protect_from_forgery :except => [:sign_in],[:ad_post]
+
   def sign_in
     #array_my = []
     #array_my << {:Name => "Test",:ID =>"test"}
@@ -24,22 +24,13 @@ class ServicesController < ApplicationController
    end
 
    def add_pros
-     #picture= ActiveSupport::Base64.decode64(params[:pic])
-    # photo = Product.new(params[:pic])
-     #  data = StringIO.new(Base64.decode64(params[:base64_string]))
-      # data.class.class_eval { attr_accessor :original_filename, :content_type }
-       #data.original_filename = "screenshots.jpg"
-       #data.content_type = "image/jpg"
-       #photo.image = data
-
-
-     product=Product.new(params[:product]) 
+    product=Product.new(params[:product]) 
 
       if product.save
         flash = "Successful"
         render :json => flash
       else
-      render :json => error	
+        render :json => error	
       end
    end
   
@@ -71,5 +62,12 @@ class ServicesController < ApplicationController
   def categories_show
     category=Category.all
     render :json =>category	
+  end
+
+  def show_prod
+    category=Category.find(params[:id])
+    product = category.products.all
+
+    render :json =>product
   end
 end

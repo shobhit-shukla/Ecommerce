@@ -5,6 +5,10 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
+ <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
    <div class="field">
   <%= f.label :Category %><br/>
   <%= f.collection_select :category_id, Category.all, :id, :title,:class=>"span6 chzn- select",:size => "1x10",:prompt => "Select a Category" %>

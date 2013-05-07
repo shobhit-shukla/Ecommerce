@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503114052) do
+ActiveRecord::Schema.define(:version => 20130507102153) do
 
   create_table "ad_posts", :force => true do |t|
     t.string   "name"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20130503114052) do
     t.string   "pic_content_type"
     t.integer  "pic_file_size"
     t.datetime "pic_updated_at"
+    t.float    "price"
   end
 
   add_index "products", ["category_id", "created_at"], :name => "index_products_on_category_id_and_created_at"

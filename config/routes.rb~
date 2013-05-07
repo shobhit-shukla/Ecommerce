@@ -16,6 +16,7 @@ Shobhit1::Application.routes.draw do
 			   post  'add_pros'			
 			   get   'categories_show'
                            get   'show_pros'
+			   get   'show_prod'	
 		         end
                       end
   
