@@ -21,5 +21,8 @@ module SessionsHelper
     self.current_user = nil
     cookies.delete(:remember_token)
   end
-
+ 
+  def sadmin_consumer?
+  	current_user.sadmin?
+  end
 end

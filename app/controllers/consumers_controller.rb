@@ -1,7 +1,13 @@
 class ConsumersController < ApplicationController
   # GET /consumers
   # GET /consumers.json
-  def index
+  before_filter :admin_consumer,     only: :destroy
+
+  def admin_consumer
+      redirect_to(root_path) unless current_user.sadmin?
+  end
+
+ def index
     @consumers = Consumer.all
     respond_to do |format|
       format.html # index.html.erb

@@ -1,5 +1,5 @@
 class Consumer < ActiveRecord::Base
-  attr_accessible :email, :name, :password , :password_confirmation
+  attr_accessible :email, :name, :password , :password_confirmation,:sadmin
   has_secure_password
   has_many :categories
 

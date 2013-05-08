@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507102153) do
+ActiveRecord::Schema.define(:version => 20130508142142) do
 
   create_table "ad_posts", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130507102153) do
     t.float    "price"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "link"
   end
 
   create_table "categories", :force => true do |t|
@@ -34,28 +35,57 @@ ActiveRecord::Schema.define(:version => 20130507102153) do
   create_table "consumers", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "password_digest"
     t.string   "remember_token"
+    t.boolean  "sadmin",          :default => false
   end
 
   add_index "consumers", ["email"], :name => "index_consumers_on_email", :unique => true
   add_index "consumers", ["remember_token"], :name => "index_consumers_on_remember_token"
 
+  create_table "items", :force => true do |t|
+    t.integer  "category_id"
+    t.string   "name"
+    t.string   "location"
+    t.string   "email"
+    t.integer  "phone_no"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.float    "price"
+    t.string   "description"
+  end
+
   create_table "products", :force => true do |t|
     t.string   "title"
     t.text     "content"
     t.integer  "category_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "pic_file_name"
     t.string   "pic_content_type"
     t.integer  "pic_file_size"
     t.datetime "pic_updated_at"
     t.float    "price"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "products", ["category_id", "created_at"], :name => "index_products_on_category_id_and_created_at"
+
+  create_table "profiles", :force => true do |t|
+    t.integer  "category_id"
+    t.string   "name"
+    t.string   "location"
+    t.string   "email"
+    t.integer  "phone_no"
+    t.string   "opening_hours"
+    t.string   "closing_hours"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
 end

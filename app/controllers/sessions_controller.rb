@@ -1,6 +1,15 @@
 class SessionsController < ApplicationController
  
  def new
+	if signed_in?
+            if sadmin_consumer?
+	       redirect_to :consumers
+             else
+               redirect_to new_item_path
+             end
+	else
+	   true
+	end
  end
  
  def create
@@ -8,7 +17,7 @@ class SessionsController < ApplicationController
    if consumer && consumer.authenticate(params[:session][:password])
       session[:consumer_id] = consumer.id
       sign_in consumer
-      redirect_to consumers_path
+      redirect_to root_url
    else
      flash.now[:error] = 'Invalid email/password combination'
      render 'new'

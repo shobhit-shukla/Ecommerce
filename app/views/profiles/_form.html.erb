@@ -1,0 +1,36 @@
+<h1>Create Store</h1>
+<div class="span6 offset3">
+<%= form_for(@profile) do |f| %>
+ <div class="field">
+  <%= f.label :Category %><br/>
+  <%= f.collection_select :category_id, Category.all, :id, :title,:class=>"span6 chzn- select",:size => "1x10",:prompt => "Select a Category" %>
+   </div>
+  
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+     <%= f.label :location %>
+     <%= f.text_field :location %>
+  </div>
+   <%= f.label :Email %>
+   <%= f.text_field :email %>
+  <div>
+  <div class='field'>
+    <%= f.label :phone_no%>
+    <%= f.text_field :phone_no %>
+  </div>	
+
+  <div class='field'>
+    <%= f.label :opening_hours%>
+    <%= f.text_field :opening_hours %>
+  </div>	
+
+  <div class='field'>
+    <%= f.label :closing_hours%>
+    <%= f.text_field :closing_hours %>
+  </div>	 
+    <%= f.submit "ADD" ,class: "btn btn-primary btn-large" %>
+<% end %>
+</div>

@@ -1,6 +1,8 @@
 Shobhit1::Application.routes.draw do
   get "products/new"
-
+  
+  resources :profiles
+  resources :items
   resources :consumers
   resources :homes
   resources :sessions

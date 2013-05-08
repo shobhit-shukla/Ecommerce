@@ -1,0 +1,15 @@
+<h1>Items</h1>
+ <div class="span8">        
+  <div class="categories">
+   <% @items.each do |item| %>  
+    <li><%= item.name %><br/>    
+    <%= link_to 'Show', item %>
+    <%#<%= link_to 'Edit', edit_category_path(category) %>
+    <%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  
+  <% end %>
+</div>
+</div>
+ <aside style="margin-left:10%">
+<%= link_to 'Add Items' , new_item_path ,class:'btn btn-large btn-primary' %>
+</aside>
