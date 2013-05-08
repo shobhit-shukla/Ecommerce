@@ -3,9 +3,6 @@
  <div class="categories">
   <% @ad_posts.each do |ad_post| %>  
     <li><%= ad_post.name %><br/>
-    <span class="timestamp">
-    Posted <%= time_ago_in_words(product.created_at) %> ago.
-    </span>
     <%= link_to 'Show', ad_post %>
     <%= link_to 'Edit', edit_ad_post_path(ad_post) %>
     <%= link_to 'Delete', ad_post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
