@@ -20,7 +20,7 @@ Shobhit1::Application.routes.draw do
 		         end
                       end
   
-  root to: "homes#index"
+  root to: "sessions#new"
   match '/sign_in', to: 'sessions#new'
   match '/sign_out',to: 'sessions#destroy' ,via: :delete
   # The priority is based upon order of creation:

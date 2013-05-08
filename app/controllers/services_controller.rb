@@ -38,7 +38,7 @@ class ServicesController < ApplicationController
 	array_of_pr = []     
 	product=Product.all
 	product.each do |pr|
-	array_of_pr << {:url => pr.pic.url(:small),:category_id => 		       pr.category_id,:title => pr.title, :content =>pr.content}
+	array_of_pr << {:url => pr.pic.url(:small),:category_id => 		       pr.category_id,:title => pr.title, :content =>pr.content,:price => pr.price}
         end
      render :json =>array_of_pr
    end

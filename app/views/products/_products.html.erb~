@@ -1,0 +1,7 @@
+<li>
+  <span class="content"><%= product.title %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(title.created_at) %> ago.
+  </span>
+</li>
+

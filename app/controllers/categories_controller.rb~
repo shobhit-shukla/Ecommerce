@@ -27,6 +27,7 @@ class CategoriesController < ApplicationController
   def show
     @category = current_user.categories.find_by_id(params[:id])
     @category = Category.find(params[:id])
+    @products = @category.products
   end
   
   def destroy
