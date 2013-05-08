@@ -1,18 +1,15 @@
-<div class ="row">
 <h1>Categories</h1>
-<aside>
-<%= link_to 'Add Category', new_category_path ,class: "btn btn-primary btn-large" %>	
-</aside>
-
- <div class="span8 offset3">        
- <div class="categories">
-  <% @categories.each do |category| %>  
+ <div class="span8">        
+  <div class="categories">
+   <% @categories.each do |category| %>  
     <li><%= category.title %><br/>    
     <%= link_to 'Show', category %>
     <%= link_to 'Edit', edit_category_path(category) %>
     <%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %></li>
   
-<% end %>
+  <% end %>
 </div>
 </div>
-</div>
+ <aside style="margin-left:10%">
+  <%= link_to 'Add Category', new_category_path ,class: "btn btn-primary btn-large" %>	
+ </aside>

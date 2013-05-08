@@ -1,10 +1,5 @@
-<div class ="row">
 <h1>Ads posted</h1>
-<aside>
-<%= link_to 'Add Ads', new_product_path ,class: "btn btn-primary btn-large" %>	
-</aside>
-
- <div class="span8 offset3">        
+ <div class="span8">        
  <div class="categories">
   <% @products.each do |product| %>  
     <li><%= product.title %><br/>
@@ -12,9 +7,15 @@
     <%= image_tag product.pic.url(:small) %>
     <%= link_to 'Show', product %>
     <%= link_to 'Edit', edit_product_path(product) %>
-    <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %><br/>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(product.created_at) %> ago.
+    </span></li>
   
 <% end %>
 </div>
 </div>
-</div>
+<aside style="margin-left:10%">
+<%= link_to 'Add Ads', new_product_path ,class: "btn btn-primary btn-large" %>	
+</aside>
+

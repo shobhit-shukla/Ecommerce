@@ -9,10 +9,6 @@
   <%= f.label :price %>
   <%= f.text_field :price %>
   <%# <%= f.collection_select :category_id, Category.all, :id, :title,:class=>"span6 chzn- select",:size => "1x10",:prompt => "Select a Category" %>
-   </div>
-   	 <%= f.file_field :photo %>
-
-  <div >
     <%= f.label :description %><br />
     <%= f.text_area :description, :size => "30x10" %>
   </div>

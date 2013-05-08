@@ -1,20 +1,20 @@
 <h1>Users</h1>
 <div class="categories">
-<div class="span8">
-<ul>
-<% @consumers.each do |consumer| %>
+  <div class="span8">
+   <ul>
+    <% @consumers.each do |consumer| %>
   
-    <li>Name :<%= consumer.name %><br/>
-    Email :<%= consumer.email %><br/>
-    <%= link_to 'Show', consumer %>
-    <%= link_to 'Edit', edit_consumer_path(consumer) %>
-    <%= link_to 'Destroy', consumer, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-<% end %>
-</ul>
+      <li>Name :<%= consumer.name %><br/>
+      Email :<%= consumer.email %><br/>
+      <%= link_to 'Show', consumer %>
+      <%= link_to 'Edit', edit_consumer_path(consumer) %>
+      <%= link_to 'Destroy', consumer, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <% end %>
+   </ul>
+  </div>
 </div>
-</div>
-<aside class="offset2">
-<%= link_to 'Show Ads', products_path ,class:"btn btn-primary btn-large"%>
-</aside>
+ <aside style="margin-left:10%">
+   <%= link_to 'Show Ads', products_path ,class:"btn btn-primary btn-large"%>
+ </aside>
 
 
