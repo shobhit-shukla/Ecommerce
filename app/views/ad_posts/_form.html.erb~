@@ -10,7 +10,7 @@
      <%= f.text_field :link %>
   </div>
    <%= f.label :Picture %>
-   <%= f.file_field :pic %>
+   <%= f.file_field :photo %>
   <div>
   <div class='field'>
     <%= f.label :description %>

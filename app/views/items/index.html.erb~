@@ -1,4 +1,4 @@
-<h1>Items</h1>
+<h1>Ads</h1>
  <div class="span8">        
   <div class="categories">
    <% @items.each do |item| %>  
@@ -11,5 +11,5 @@
 </div>
 </div>
  <aside style="margin-left:10%">
-<%= link_to 'Add Items' , new_item_path ,class:'btn btn-large btn-primary' %>
+<%= link_to 'Add Ad' , new_item_path ,class:'btn btn-large btn-primary' %>
 </aside>

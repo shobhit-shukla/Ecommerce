@@ -1,5 +1,5 @@
 class AddPhotosToAdPosts < ActiveRecord::Migration
-  def self.up
+ def self.up
       add_column :ad_posts, :photo_file_name,    :string
       add_column :ad_posts, :photo_content_type, :string
       add_column :ad_posts, :photo_file_size,    :integer
@@ -12,4 +12,4 @@ class AddPhotosToAdPosts < ActiveRecord::Migration
      remove_column :ad_posts, :photo_file_size
      remove_column :ad_posts, :photo_updated_at
   end 
-end
+end 

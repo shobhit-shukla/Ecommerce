@@ -1,4 +1,4 @@
-<h1>Add Item</h1>
+<h1>Add Ads</h1>
 <div class="span6 offset3">
 <%= form_for(@item) do |f| %>
   <div class="field">

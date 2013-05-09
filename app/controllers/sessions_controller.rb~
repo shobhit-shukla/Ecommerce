@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
             if sadmin_consumer?
 	       redirect_to :consumers
              else
-               redirect_to new_item_path
+               redirect_to new_profile_path
              end
 	else
 	   true
