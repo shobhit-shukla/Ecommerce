@@ -3,7 +3,7 @@ class SubCategoriesController < ApplicationController
  def index
   @sub=SubCategory.where({:category_id => session[:category_id]})
    
-   render @sub.inspect
+   #render @sub.inspect
   end
  
  def new
