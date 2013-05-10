@@ -68,17 +68,13 @@ ActiveRecord::Schema.define(:version => 20130510132750) do
     t.string   "title"
     t.text     "content"
     t.integer  "category_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "pic_file_name"
     t.string   "pic_content_type"
     t.integer  "pic_file_size"
     t.datetime "pic_updated_at"
     t.float    "price"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
     t.integer  "mrp"
     t.integer  "quantity"
     t.string   "units"
@@ -103,7 +99,6 @@ ActiveRecord::Schema.define(:version => 20130510132750) do
   create_table "sub_categories", :force => true do |t|
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.string   "title"
     t.string   "description"
     t.integer  "category_id"
   end
