@@ -2,8 +2,10 @@ class Category < ActiveRecord::Base
   attr_accessible  :description, :title
 
   belongs_to :consumer
+   
+  has_many :products ,dependent: :destroy
   has_many :profiles ,dependent: :destroy
-  has_many :products  ,dependent: :destroy
+  has_many :sub_categories  ,dependent: :destroy
   
   validates :consumer_id, presence: true
   validates :title, presence: true ,

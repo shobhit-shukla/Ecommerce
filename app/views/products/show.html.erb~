@@ -1,9 +1,9 @@
-
-
-<%= image_tag @product.pic.url(:small) %>
-
-<%= simple_format h(@product.content) %>
-
+<div class="row span4 offset3">
+Name :<%=(@product.title) %><br/><br/>
+Our Price :<%= (@product.price) %><br/><br/>
+MRP :<%= (@product.mrp) %><br/><br/>
+QUANTITY :<%= (@product.quantity) %><%=(@product.units) %><br/><br/>
+Description :<%= simple_format h(@product.content) %>
 
  <% unless @product.category.nil? %>
 <p>
@@ -17,4 +17,7 @@
   <%= link_to "Destroy", @product, :confirm => 'Are you sure?', :method => :delete %> 
   <%= link_to "View All", products_path %>
 </p>
-
+</div>
+<aside>
+<%= image_tag @product.pic.url(:small) %><br/>
+</aside>

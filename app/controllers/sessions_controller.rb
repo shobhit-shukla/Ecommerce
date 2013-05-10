@@ -5,7 +5,12 @@ class SessionsController < ApplicationController
             if sadmin_consumer?
 	       redirect_to :consumers
              else
-               redirect_to new_profile_path
+                profile = Profile.find_by_consumer_id(current_user.id)
+                 if profile
+                   redirect_to profiles_path
+                  else
+                  redirect_to new_profile_path 
+                  end                
              end
 	else
 	   true

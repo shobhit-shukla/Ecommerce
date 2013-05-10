@@ -1,7 +1,9 @@
 class Consumer < ActiveRecord::Base
-  attr_accessible :email, :name, :password , :password_confirmation,:sadmin
+  attr_accessible :email, :name, :password , :password_confirmation,:sadmin,:phone_no,
+:address
   has_secure_password
   has_many :categories
+  has_many :profiles 
 
   before_save { |consumer| consumer.email = email.downcase }
   before_save :create_remember_token

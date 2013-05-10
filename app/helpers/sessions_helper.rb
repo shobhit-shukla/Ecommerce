@@ -25,4 +25,10 @@ module SessionsHelper
   def sadmin_consumer?
   	current_user.sadmin?
   end
+     
+ def set_category=(id)
+      category_id=id 
+ end
+
+ 
 end

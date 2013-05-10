@@ -16,10 +16,11 @@
     <nav>
      <ul class="nav pull-right">
 	  <% if signed_in? %>
-             <li><%= link_to "Create Store", new_profile_path %></li>
+             <li><%= link_to "Store", profiles_path %></li>
              <li><%= link_to "Items", products_path %></li>
-             <li><%= link_to "Categories", categories_path %></li>
+             <li><%= link_to "Sub Categories", sub_categories_path %></li>
                <% if sadmin_consumer? %> 
+                 <li><%= link_to "Categories", categories_path %></li>
                  <li><%= link_to "Ads", ad_posts_path %></li>
                  <li><%= link_to "Users", consumers_path %></li>
                  <% end %>

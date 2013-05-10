@@ -1,6 +1,7 @@
 Shobhit1::Application.routes.draw do
   get "products/new"
   
+  resources :sub_categories
   resources :profiles
   resources :items
   resources :consumers
@@ -18,7 +19,8 @@ Shobhit1::Application.routes.draw do
 			   post  'add_pros'			
 			   get   'categories_show'
                            get   'show_pros'
-			   get   'show_prod'	
+			   get   'show_prod'
+                           post  'forget'	
 		         end
                       end
   

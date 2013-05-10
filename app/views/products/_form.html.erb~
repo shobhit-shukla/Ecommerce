@@ -5,13 +5,24 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
- <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
+  <div class="field">
+      MRP <br/>	<br/>
+    <%= f.text_field :mrp %>
   </div>
+ <div class="field">
+    <%= f.label :our_price %><br />
+    <%= f.text_field :price %>
+ </div>
+   <%= f.label :units %>
+   <%= f.select :units, [['kg','Kg'],['gm','gm'],['ltr','ltr'],['cm','cm'],['mtr','mtr'],['ml','ml']] %>
+ 
+   <div class=""field%>
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity %>
+ </div>
    <div class="field">
   <%= f.label :Category %><br/>
-  <%= f.collection_select :category_id, Category.all, :id, :title,:class=>"span6 chzn- select",:size => "1x10",:prompt => "Select a Category" %>
+  <%= f.collection_select :category_id, SubCategory.all, :id, :title,:class=>"span6 chzn- select",:size => "1x10",:prompt => "Select a Category" %>
    </div>
    <%= f.label :Picture %>
    <%= f.file_field :pic %></p>

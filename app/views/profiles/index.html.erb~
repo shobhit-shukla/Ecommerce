@@ -1,3 +1,35 @@
-<h1>Profile</h1>
-<%= link_to "Add Profile" , new_profile_path %>
-<%= link_to "show" ,show_profile_path(@profile) %>
+<h1>Manage Store</h1>
+
+<div class="span8">
+   <table>
+<tr>
+<th>Name</th>
+<th>Category</th>
+<th>Location</th>
+<th>Phone</th>
+<th>Zip code</th>
+<th>Opening Hours</th>
+<th>Closing Hours</th>
+<th></th>
+<th></th>
+<th></th>
+
+   <% @pro.each do |profile| %>
+</tr>  
+    <td><%= profile.name %></td> 
+    <td><%= profile.category.title %></td>
+    <td><%= profile.location %></td>
+    <td><%= profile.phone_no %></td>
+    <td><%= profile.zip_code %></td>
+    <td><%= profile.opening_hours %></td>
+    <td><%= profile.closing_hours %></td>	   
+    <td><%= link_to 'Show', profile %></td>
+    <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+    <td><%= link_to 'Delete', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+  <% end %>
+</table>
+</div>
+</div>
+
+

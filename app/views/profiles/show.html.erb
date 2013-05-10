@@ -1,1 +1,23 @@
      <h1><%= @profile.name %></h1>
+        <table>
+<tr>
+<th>Name</th>
+<th>Category</th>
+<th>Location</th>
+<th>Phone</th>
+<th>Zip code</th>
+<th>Opening Hours</th>
+<th>Closing Hours</th>
+
+
+
+     <tr>
+      <td><%= @profile.name %></td>
+      <td><%= @profile.category.title %></td>
+      <td><%= @profile.location %></td>
+      <td><%= @profile.phone_no %></td>
+      <td><%= @profile.zip_code %></td>
+      <td><%= @profile.opening_hours %></td>
+      <td><%= @profile.closing_hours %></td>
+</tr>
+</table>

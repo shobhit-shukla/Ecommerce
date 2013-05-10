@@ -13,6 +13,11 @@ class ServicesController < ApplicationController
       end
    end
   
+   def forget
+     consumer= Consumer.where({:email => params[:email])
+      render :json => consumer        
+   end
+   
    def add_ads
      ad_post=AdPost.new({:name =>params[:name], :price =>params[:price], :description=>params[:description]}) 
       if ad_post.save

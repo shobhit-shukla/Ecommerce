@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130509080330) do
+ActiveRecord::Schema.define(:version => 20130510132750) do
 
   create_table "ad_posts", :force => true do |t|
     t.string   "name"
@@ -44,6 +44,9 @@ ActiveRecord::Schema.define(:version => 20130509080330) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "sadmin",          :default => false
+    t.boolean  "user_type",       :default => false
+    t.integer  "phone_no"
+    t.string   "address"
   end
 
   add_index "consumers", ["email"], :name => "index_consumers_on_email", :unique => true
@@ -76,6 +79,9 @@ ActiveRecord::Schema.define(:version => 20130509080330) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "mrp"
+    t.integer  "quantity"
+    t.string   "units"
   end
 
   add_index "products", ["category_id", "created_at"], :name => "index_products_on_category_id_and_created_at"
@@ -90,6 +96,16 @@ ActiveRecord::Schema.define(:version => 20130509080330) do
     t.string   "closing_hours"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "zip_code"
+    t.integer  "consumer_id"
+  end
+
+  create_table "sub_categories", :force => true do |t|
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "title"
+    t.string   "description"
+    t.integer  "category_id"
   end
 
 end
