@@ -14,7 +14,7 @@ class ServicesController < ApplicationController
    end
   
    def forget
-     consumer= Consumer.where({:email => params[:email])
+     consumer= Consumer.where({:email => params[:email]})
       render :json => consumer        
    end
    
