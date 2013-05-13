@@ -1,8 +1,8 @@
 <h1>Sub Category</h1>
  <div class="span8">        
-  <div class="categories">
+  <div class="categories"> 
    <% @sub.each do |sub_category| %>  
-    <li><%= sub_category.title %><br/>    
+    <li><%= sub_category.title %><br/> 
     <%= link_to 'Show', sub_category %>
     <%= link_to 'Edit', edit_sub_category_path(sub_category) %>
     <%= link_to 'Delete', sub_category, method: :delete, data: { confirm: 'Are you sure?' } %></li>

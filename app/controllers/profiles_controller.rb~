@@ -1,11 +1,13 @@
 class ProfilesController < ApplicationController
  
   def index
-    @pro = Profile.where({:consumer_id => current_user.id})
-    
-     session[:category_id] =@pro[0].category_id
-    #set_category  
-    # render @pro.location.inspect
+     if sadmin_consumer?
+        @pro=Profile.all
+     else
+        @pro = Profile.where({:consumer_id => current_user.id})
+        session[:category_id] = @pro[0].category_id 
+        #render cookies[:category_id].inspect
+     end    
   end
   
   def create

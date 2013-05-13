@@ -22,7 +22,7 @@
  </div>
    <div class="field">
   <%= f.label :Category %><br/>
-  <%= f.collection_select :category_id, SubCategory.all, :id, :title,:class=>"span6 chzn- select",:size => "1x10",:prompt => "Select a Category" %>
+  <%= f.collection_select :sub_category_id, SubCategory.all, :id, :title,:class=>"span6 chzn- select",:size => "1x10",:prompt => "Select a Category" %>
    </div>
    <%= f.label :Picture %>
    <%= f.file_field :pic %></p>

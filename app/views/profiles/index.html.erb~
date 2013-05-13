@@ -1,3 +1,4 @@
+<%= session.inspect %> 
 <h1>Manage Store</h1>
 
 <div class="span8">

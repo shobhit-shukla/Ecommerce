@@ -1,6 +1,6 @@
 <h2>Add SubCategory</h2>
 <div class="span6 offset3">
-<%= form_for(@sub_category) do |f| %>
+<%= form_for(@sub) do |f| %>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -10,6 +10,7 @@
      <%= f.text_area :description, :size => "30x10" %>
   </div>
   <div class="actions">
+<input type="hidden" name="category_id" value="<%= session[:category_id]%>" />
     <%= f.submit "ADD" ,class: "btn btn-primary btn-large" %>
   </div>
 <% end %>
