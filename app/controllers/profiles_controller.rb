@@ -6,7 +6,8 @@ class ProfilesController < ApplicationController
      else
         @pro = Profile.where({:consumer_id => current_user.id})
         session[:category_id] = @pro[0].category_id 
-        #render cookies[:category_id].inspect
+        session[:store_id] = @pro[0].id 
+        #render session[:store_id].inspect
      end    
   end
   

@@ -1,11 +1,13 @@
 class SubCategoriesController < ApplicationController
  
   def index 
-   @sub=SubCategory.where({:category_id => session[:category_id]})
+   #@sub=SubCategory.where({:category_id => session[:category_id]})
+   @sub=SubCategory.where({:store_id => session[:store_id]})
+
   end
  
   def create
-   @sub = SubCategory.new({:title =>params[:sub_category][:title] ,:description =>params[:sub_category][:description],:category_id =>params[:category_id]})
+   @sub = SubCategory.new({:title =>params[:sub_category][:title] ,:description =>params[:sub_category][:description],:category_id =>params[:category_id],:store_id =>params[:store_id]})
   
     if @sub.save
       flash.now[:success] = "Sub Category created successfully "

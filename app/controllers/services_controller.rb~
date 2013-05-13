@@ -66,7 +66,7 @@ class ServicesController < ApplicationController
   
   def categories_show
     category=Category.all
-    render :json =>category	
+    render :json =>{"categories" => category}
   end
 
   def show_prod
@@ -82,8 +82,12 @@ class ServicesController < ApplicationController
   end
 
   def sub_categories
-    sub=SubCategory.where({:category_id => params[:category_id] })
-    
+    sub=SubCategory.where({:store_id => params[:store_id] })    
     render :json =>sub
+  end
+   
+  def items
+    item=Product.where({:sub_category_id => params[:sub_category_id] })
+    render :json =>item    
   end
 end
