@@ -3,7 +3,6 @@ class SubCategoriesController < ApplicationController
   def index 
    #@sub=SubCategory.where({:category_id => session[:category_id]})
    @sub=SubCategory.where({:store_id => session[:store_id]})
-
   end
  
   def create

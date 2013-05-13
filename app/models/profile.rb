@@ -3,6 +3,7 @@ class Profile < ActiveRecord::Base
 
 belongs_to :category
 belongs_to :consumer
+has_many :products
 
 validates  :category_id,presence: true
 validates  :consumer_id,presence: true

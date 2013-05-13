@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130513103859) do
+ActiveRecord::Schema.define(:version => 20130513120105) do
 
   create_table "ad_posts", :force => true do |t|
     t.string   "name"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20130513103859) do
     t.integer  "quantity"
     t.string   "units"
     t.integer  "sub_category_id"
+    t.integer  "store_id"
   end
 
   add_index "products", ["category_id", "created_at"], :name => "index_products_on_category_id_and_created_at"

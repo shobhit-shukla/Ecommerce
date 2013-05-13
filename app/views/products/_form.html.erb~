@@ -22,7 +22,7 @@
  </div>
    <div class="field">
   <%= f.label :Category %><br/>
-  <%= f.collection_select :sub_category_id, SubCategory.all, :id, :title,:class=>"span6 chzn- select",:size => "1x10",:prompt => "Select a Category" %>
+  <%= f.collection_select :sub_category_id, SubCategory.where({:store_id => session[:store_id]}), :id, :title,:class=>"span6 chzn- select",:size => "1x10",:prompt => "Select a Category" %>
    </div>
    <%= f.label :Picture %>
    <%= f.file_field :pic %></p>
@@ -31,7 +31,7 @@
     <%= f.label :content %><br />
     <%= f.text_area :content, :size => "30x10" %>
   </div>
-  
+  <input type="hidden" name="product[store_id]" value="<%= session[:store_id]%>" />
     <%= f.submit "ADD" ,class: "btn btn-primary btn-large" %>
   </div>
 <% end %>
