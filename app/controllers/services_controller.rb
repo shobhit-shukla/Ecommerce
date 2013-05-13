@@ -77,8 +77,8 @@ class ServicesController < ApplicationController
   end
   
   def sub_categories
-     sub=SubCategory.where({:category_id => '2' })
-     #category= Category.where({:category_id => '1'})
+     sub=SubCategory.where({:category_id => params[:category_id] })
+    #category= Category.where({:category_id => '1'})
     #category=Category.find(params[:id])
     #sub_category = category.sub_categories.all	
     render :json =>sub

@@ -20,8 +20,8 @@ Shobhit1::Application.routes.draw do
 			   get   'categories_show'
                            get   'show_pros'
 			   get   'show_prod'
-                           get  'forget'
-                           get   'sub_categories'	
+                           get   'forget'
+                           post  'sub_categories'	
 		         end
                       end
   
