@@ -76,11 +76,13 @@ class ServicesController < ApplicationController
     render :json =>product
   end
   
+  def stores
+   stores=Profile.where({:category_id => params[:category_id] })
+   render :json =>stores
+  end
+
   def sub_categories
-     sub=SubCategory.where({:category_id => params[:category_id] })
-    #category= Category.where({:category_id => '1'})
-    #category=Category.find(params[:id])
-    #sub_category = category.sub_categories.all	
+    sub=SubCategory.where({:category_id => params[:category_id] })    
     render :json =>sub
   end
 end
