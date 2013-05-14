@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  consumer_id: 1
+  store_id: MyString
+  total_price: 1.5
+  zip_code: 1
+  shipping_address: MyString
+
+two:
+  consumer_id: 1
+  store_id: MyString
+  total_price: 1.5
+  zip_code: 1
+  shipping_address: MyString

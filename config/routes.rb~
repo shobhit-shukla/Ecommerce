@@ -1,6 +1,7 @@
 Shobhit1::Application.routes.draw do
   get "products/new"
   
+  resources :orders
   resources :sub_categories
   resources :profiles
   resources :items
@@ -24,6 +25,7 @@ Shobhit1::Application.routes.draw do
                            post  'sub_categories'
                            post  'stores'	
                            post  'items'
+			   post  'orders'	
 		         end
                       end
   

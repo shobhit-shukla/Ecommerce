@@ -82,12 +82,29 @@ class ServicesController < ApplicationController
   end
 
   def sub_categories
-    sub=SubCategory.where({:store_id => params[:store_id] })    
+    sub=SubCategory.where({:store_id =>	 params[:store_id] })    
     render :json =>sub
   end
    
-  def items
-    item=Product.where({:sub_category_id => params[:sub_category_id] })
-    render :json =>item    
+  def items 
+        array_of_items = []     
+	item=Product.where({:sub_category_id => params[:sub_category_id] })
+	item.each do |pr|
+	array_of_items << {:url => pr.pic.url(:small),:title => pr.title, :content =>pr.content,:price => pr.price,:mrp =>pr.mrp,:quantity =>pr.quantity ,:sub_category_id =>pr.sub_category_id,:units =>pr.units}
+        end
+     render :json =>array_of_items
+   
+    #render :json =>item    
   end
+ 
+  def orders
+   order = Order.new(params[:order])
+      if order.save
+         render json: order
+      else
+	flash = "Fail"
+	render :json => flash       
+      end
+  end
+  
 end

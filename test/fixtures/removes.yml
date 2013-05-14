@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  order: MyString
+  order_by: MyString
+  order_to: MyString
+  total_price: 1.5
+  zip_code: 1
+  shipping_address: MyString
+
+two:
+  order: MyString
+  order_by: MyString
+  order_to: MyString
+  total_price: 1.5
+  zip_code: 1
+  shipping_address: MyString

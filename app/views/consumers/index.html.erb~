@@ -3,7 +3,7 @@
   <div class="span8">
    <ul>
     <% @consumers.each do |consumer| %>
-      <li>Name :<%= consumer.name %><br/>
+      <li>Name :<%= link_to consumer.name, profiles_path%><br/>
       Email :<%= consumer.email %><br/>
       <%= link_to 'Show', consumer %>
       <%= link_to 'Edit', edit_consumer_path(consumer) %>

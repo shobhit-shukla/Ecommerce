@@ -26,5 +26,8 @@ class SubCategoriesController < ApplicationController
   end
   
   def destroy
+    @sub_category = SubCategory.find(params[:id])
+    @sub_category.destroy
+    redirect_to @sub_category	
   end
 end

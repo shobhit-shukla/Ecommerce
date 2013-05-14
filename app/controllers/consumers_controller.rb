@@ -10,7 +10,7 @@ class ConsumersController < ApplicationController
  def index
     @consumers = Consumer.all
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.erb	
       format.json { render json: @consumers }
     end
   end
