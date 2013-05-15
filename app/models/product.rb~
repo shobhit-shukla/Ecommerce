@@ -15,7 +15,7 @@ class Product < ActiveRecord::Base
   has_attached_file :pic,
    :url  => "/assets/products/:id/:style/:basename.:extension",
    :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension",
-   :styles  => { :small => "100x100#", :large => "500x500>" }  
+   :styles  => { :small => "100x100#", :large => "500x500#" }  
 
 
   default_scope order: 'products.created_at DESC'

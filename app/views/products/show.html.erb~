@@ -1,4 +1,4 @@
-<div class="row span4 offset3">
+<div class="row span4">
 Name :<%=(@product.title) %><br/><br/>
 Our Price :<%= (@product.price) %><br/><br/>
 MRP :<%= (@product.mrp) %><br/><br/>
@@ -19,5 +19,5 @@ Description :<%= simple_format h(@product.content) %>
 </p>
 </div>
 <aside>
-<%= image_tag @product.pic.url(:small) %><br/>
+<%= image_tag @product.pic.url(:large) %><br/>
 </aside>
