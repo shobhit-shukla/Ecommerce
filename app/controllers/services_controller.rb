@@ -99,8 +99,12 @@ class ServicesController < ApplicationController
 
 
   def all_items
+    my_array = []     
     items=Product.all
-    render :json => items
+    items.each do |pr|
+	my_array << {:url => pr.pic.url(:small),:title => pr.title, :content =>pr.content,:price => pr.price,:mrp =>pr.mrp,:quantity =>pr.quantity ,:sub_category_id =>pr.sub_category_id,:units =>pr.units}
+        end
+    render :json => my_array
   end 
 
   def orders
