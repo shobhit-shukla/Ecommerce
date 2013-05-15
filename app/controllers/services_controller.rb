@@ -96,7 +96,13 @@ class ServicesController < ApplicationController
    
     #render :json =>item    
   end
- 
+
+
+  def all_items
+    items=Product.all
+    render :json => items
+  end 
+
   def orders
    order = Order.new(params[:order])
       if order.save

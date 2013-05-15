@@ -5,10 +5,10 @@
     <li><%= ad_post.name %><br/>
     <%= link_to 'Show', ad_post %>
     <%= link_to 'Edit', edit_ad_post_path(ad_post) %>
-    <%= link_to 'Delete', ad_post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-  
-<% end %>
-</div>
+    <%= link_to 'Delete', ad_post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>  
+  <% end %>
+ </div>
 </div>
 
 <aside style="margin-left:10%">
