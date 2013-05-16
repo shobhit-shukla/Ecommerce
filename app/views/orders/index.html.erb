@@ -1,4 +1,11 @@
 <h1>Orders</h1>
   <% @orders.each do |order| %>  
-  <%= order.id %>
+  <li>Order Id  :<%= order.id %><br/>
+  Consumer Id :<%= order.consumer_id %><br/>
+  Address  :<%= order.shipping_address %><br/>
+  Store id:<%= order.store_id %> <br/>
+  Totl Price :<%= order.total_price %><br/>
+  Zip code :<%= order.zip_code %><br/>
+  Phone No: <%= order.phone_no %><br/></li>
+  <br/>
   <% end %>
