@@ -90,7 +90,7 @@ class ServicesController < ApplicationController
         array_of_items = []     
 	item=Product.where({:sub_category_id => params[:sub_category_id] })
 	item.each do |pr|
-	array_of_items << {:url => pr.pic.url(:small),:title => pr.title, :content =>pr.content,:price => pr.price,:mrp =>pr.mrp,:quantity =>pr.quantity ,:sub_category_id =>pr.sub_category_id,:units =>pr.units}
+	array_of_items << {:url => pr.pic.url(:small),:title => pr.title, :content =>pr.content,:price => pr.price,:mrp =>pr.mrp,:quantity =>pr.quantity ,:sub_category_id =>pr.sub_category_id,:units =>pr.units,:item_id =>pr.id}
         end
      render :json =>array_of_items
    
@@ -108,13 +108,19 @@ class ServicesController < ApplicationController
   end 
 
   def orders
-   order = Order.new(params[:order])
+    render params.inspect
+    order = Order.new({:consumer_id =>params[:consumer_id,],:store_id =>params[:store_id], :total_price =>params[:total_price], :phone_no=>params[:phone_no],:zip_code => params[:zip_code], :shipping_address =>params[:shipping_address]}) 
+
       if order.save
-         render json: order
+         order_id =  order.id     
+         i=0
+         params[:items].each do |item|
+	 OrderItem.create({:order_id => order_id,:item_id => item, :quantity => params[:qties][i]})
+         end
+          #render json: order
       else
 	flash = "Fail"
 	render :json => flash       
       end
-  end
-  
+  end  
 end
