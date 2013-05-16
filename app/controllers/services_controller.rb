@@ -102,7 +102,7 @@ class ServicesController < ApplicationController
     my_array = []     
     items=Product.all
     items.each do |pr|
-	my_array << {:url => pr.pic.url(:small),:title => pr.title, :content =>pr.content,:price => pr.price,:mrp =>pr.mrp,:quantity =>pr.quantity ,:sub_category_id =>pr.sub_category_id,:units =>pr.units}
+	my_array << {:url => pr.pic.url(:small),:title => pr.title, :content =>pr.content,:price => pr.price,:mrp =>pr.mrp,:quantity =>pr.quantity ,:sub_category_id =>pr.sub_category_id,:units =>pr.units,:item_id => pr.id}
         end
     render :json => my_array
   end 

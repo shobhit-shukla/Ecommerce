@@ -15,6 +15,38 @@
  </div>
    <%= f.label :units %>
    <%= f.select :units, [['kg','Kg'],['gm','gm'],['ltr','ltr'],['cm','cm'],['mtr','mtr'],['ml','ml'],['inch','inch']] %>
+
+<input type="text" name="Quantity" id="quantity" /> <img src="plus.png" id="plus" />
+<input type="hidden" value="0" id="total_menu"/>
+<div id="new" style="width:400px;height: 300px;overflow:scroll;background: #CCC">
+
+</div>
+<script type="text/javascript">
+$(function(){
+	$("#plus").click(function(){
+		//alert("Test");
+		var total_menu = $("#total_menu").val();
+		var p = $("#menu").clone();
+		p.attr("id","email" + total_menu);
+		p.appendTo("#new");
+		var t = '<img src="minus.png" data-val="email'+ total_menu+'"   onclick="remove_menu(this);"/>';
+		$("#new").append(t);
+		total_menu = parseInt(total_menu) + 1;
+		$("#total_menu").val(total_menu);
+		//alert(t);
+	});	
+
+	
+});
+
+	function remove_menu(t)	
+	{
+		//alert("minus");
+		var m = $(t).attr("data-val");
+		$("#"+m).remove();
+		$(t).remove();
+	}
+</script>
  
    <div class=""field%>
     <%= f.label :quantity %><br />
