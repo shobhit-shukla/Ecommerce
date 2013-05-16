@@ -108,7 +108,6 @@ class ServicesController < ApplicationController
   end 
 
   def orders
-    render params.inspect
     order = Order.new({:consumer_id =>params[:consumer_id,],:store_id =>params[:store_id], :total_price =>params[:total_price], :phone_no=>params[:phone_no],:zip_code => params[:zip_code], :shipping_address =>params[:shipping_address]}) 
 
       if order.save
