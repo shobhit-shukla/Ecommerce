@@ -116,7 +116,8 @@ class ServicesController < ApplicationController
          params[:items].each do |item|
 	 OrderItem.create({:order_id => order_id,:item_id => item, :quantity => params[:qties][i]})
          end
-          #render json: order
+          flash ="Successful"
+          render :json => flash 
       else
 	flash = "Fail"
 	render :json => flash       
