@@ -25,7 +25,7 @@ Shobhit1::Application.routes.draw do
                            post  'sub_categories'
                            post  'stores'	
                            post  'items'
-			   get   'orders'
+			   post  'orders'
                            get   'all_items'	
 		         end
                       end
