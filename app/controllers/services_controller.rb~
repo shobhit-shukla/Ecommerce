@@ -115,7 +115,7 @@ class ServicesController < ApplicationController
       if order.save
        order_id =  order.id     
         item_arr = []
-        item_arr = JSON.decode(params[:items])
+        item_arr = JSON.parse(params[:items])
 
 	render item_arr.inspect
 

@@ -29,8 +29,10 @@ class ProductsController < ApplicationController
   end
 
    def update
+    data = Cloudinary::Uploader.upload(params[:product][:pic_file_name])
     @product = Product.find(params[:id])
-    if @product.update_attributes(params[:product])
+    if @product.update_attributes({:store_id => params[:product][:store_id],:sub_category_id => params[:product][:sub_category_id], :content =>params[:product][:content] , :title => params[:product][:title] ,:price => params[:product][:price],:mrp => params[:product][:mrp], :units => params[:product][:units], :quantity => params[:product][:quantity], :pic_content_type => data["url"]})
+
       flash[:notice] = "Successfully updated product."
       redirect_to @product
     else

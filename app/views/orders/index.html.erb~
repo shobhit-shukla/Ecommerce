@@ -8,5 +8,6 @@
   Zip code :<%= order.zip_code %><br/>
   Phone No: <%= order.phone_no %><br/></li>
   <br/>
+  <%= link_to 'Show', order %>
   <% end %>
-  <%# <%= render  @order_items %>
+
