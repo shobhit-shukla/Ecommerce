@@ -117,13 +117,11 @@ class ServicesController < ApplicationController
         item_arr = []
         item_arr = JSON.parse(params[:items])
 
-	render item_arr.inspect
+	#render item_arr.inspect
 
         item_arr.each do |t|
-	  t.itemTotal
-	  t.price
-	  t.quantityOfItem
-	  t.item	
+	  #t['itemTotal'] #t['price'] #t['quantityOfItem'] #t['item']
+          OrderItem.create({:item_id => t['item'], :order_id => order_id, :quantity => t['quantityOfItem']})
         end
           flash ="Successful"
           render :json => flash 
