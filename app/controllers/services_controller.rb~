@@ -114,7 +114,7 @@ class ServicesController < ApplicationController
          order_id =  order.id     
          i=0
          params[:items].each do |item|
-	 OrderItem.create({:order_id => order_id,:item_id => item, :quantity => params[:qties][i]})
+	 OrderItem.create({:order_id => order_id,:item_id => item, :quantity => params[:qties]})
          end
           flash ="Successful"
           render :json => flash 
