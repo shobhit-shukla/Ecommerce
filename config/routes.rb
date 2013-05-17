@@ -33,6 +33,7 @@ Shobhit1::Application.routes.draw do
   root to: "sessions#new"
   match '/sign_in', to: 'sessions#new'
   match '/sign_out',to: 'sessions#destroy' ,via: :delete
+  match '/products',to: 'products#pro'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

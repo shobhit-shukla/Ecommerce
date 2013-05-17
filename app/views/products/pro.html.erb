@@ -1,0 +1,16 @@
+<li>
+   <%= image_tag product.pic.url(:small) %>
+  <span class="content">
+    Name :<%= product.title %><br/><br/>
+
+    Price :<%= product.price %><br/><br/>
+    
+    Description :<%= product.content %><br/><br/>
+
+
+  </span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(product.created_at) %> ago.
+  </span>
+</li>
+

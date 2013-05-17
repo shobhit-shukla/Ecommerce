@@ -8,10 +8,16 @@ class ProductsController < ApplicationController
   end
 
   def create
-     @product = Product.new(params[:product])
+
+    data = Cloudinary::Uploader.upload(params[:product][:pic_file_name])
+    #a = data["url"]
+    #render a.inspect  
+
+    @product = Product.new({:store_id => params[:product][:store_id],:sub_category_id => params[:product][:sub_category_id], :content =>params[:product][:content] , :title => params[:product][:title] ,:price => params[:product][:price],:mrp => params[:product][:mrp], :units => params[:product][:units], :quantity => params[:product][:quantity], :pic_content_type => data["url"]})
+
+
     if @product.save
         flash[:notice] = "Successfully created product."
-        Cloudinary::Uploader.upload("http://localhost:3000/assets/               products/:id/:style/:basename.:extension")
         redirect_to @product
     else
       render :action => 'new'
