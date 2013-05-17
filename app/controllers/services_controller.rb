@@ -90,7 +90,7 @@ class ServicesController < ApplicationController
         array_of_items = []     
 	item=Product.where({:sub_category_id => params[:sub_category_id] })
 	item.each do |pr|
-	array_of_items << {:url => pr.pic.url(:small),:title => pr.title, :content =>pr.content,:price => pr.price,:mrp =>pr.mrp,:quantity =>pr.quantity ,:sub_category_id =>pr.sub_category_id,:units =>pr.units,:item_id =>pr.id}
+	array_of_items << {:url => pr.pic.content_type,:title => pr.title, :content =>pr.content,:price => pr.price,:mrp =>pr.mrp,:quantity =>pr.quantity ,:sub_category_id =>pr.sub_category_id,:units =>pr.units,:item_id =>pr.id}
         end
      render :json =>array_of_items
    
@@ -102,7 +102,7 @@ class ServicesController < ApplicationController
     my_array = []     
     items=Product.all
     items.each do |pr|
-	my_array << {:url => pr.pic.url(:small),:title => pr.title, :content =>pr.content,:price => pr.price,:mrp =>pr.mrp,:quantity =>pr.quantity ,:sub_category_id =>pr.sub_category_id,:units =>pr.units,:item_id => pr.id}
+	my_array << {:url => pr.pic_content_type,:title => pr.title, :content =>pr.content,:price => pr.price,:mrp =>pr.mrp,:quantity =>pr.quantity ,:sub_category_id =>pr.sub_category_id,:units =>pr.units,:item_id => pr.id}
         end
     render :json => my_array
   end 
