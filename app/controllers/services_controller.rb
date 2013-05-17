@@ -114,9 +114,9 @@ class ServicesController < ApplicationController
 
       if order.save
        order_id =  order.id     
-        item = []
-        item << JSON.decode(params[:OrderItem])
-        item.each do |t|
+        item_arr = []
+        item_arr << JSON.decode(params[:items])
+        item_arr.each do |t|
 	  t.itemTotal
 	  t.price
 	  t.quantityOfItem
