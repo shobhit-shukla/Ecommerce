@@ -17,8 +17,6 @@ class Product < ActiveRecord::Base
    :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension",
    :styles  => { :small => "100x100#", :large => "500x500#" }  
 
-  Cloudinary::Uploader.upload("http://realitysteve.com/wp-content/uploads/2012/11/rose1.jpg")
-
-  default_scope order: 'products.created_at DESC'
+   default_scope order: 'products.created_at DESC'
   
 end

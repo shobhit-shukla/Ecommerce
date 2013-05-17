@@ -11,7 +11,6 @@ Description :<%= simple_format h(@product.content) %>
   <%= link_to h(@product.sub_category.title), @product.sub_category %>
 </p>
  <% end %>
-image_tag(post.picture_url, :alt => post.short_name)
 
 <p>
   <%= link_to "Edit", edit_product_path(@product) %> 

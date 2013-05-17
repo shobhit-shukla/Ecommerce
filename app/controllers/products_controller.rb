@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
      @product = Product.new(params[:product])
     if @product.save
         flash[:notice] = "Successfully created product."
+        Cloudinary::Uploader.upload("http://localhost:3000/assets/               products/:id/:style/:basename.:extension")
         redirect_to @product
     else
       render :action => 'new'
