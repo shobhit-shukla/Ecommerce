@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
   end
   
   def show
+  Cloudinary::Uploader.upload("http://localhost:3000/assets/products/9/small/guava-juice3.jpg?1368597010")
   end
   
   def destroy
