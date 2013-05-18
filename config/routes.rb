@@ -1,6 +1,8 @@
 Shobhit1::Application.routes.draw do
+  get "password_resets/new"
+
   get "products/new"
-  
+  resources :password_resets
   resources :orders
   resources :sub_categories
   resources :profiles

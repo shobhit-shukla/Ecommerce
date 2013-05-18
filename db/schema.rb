@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130513144347) do
+ActiveRecord::Schema.define(:version => 20130518093213) do
 
   create_table "ad_posts", :force => true do |t|
     t.string   "name"
@@ -39,14 +39,16 @@ ActiveRecord::Schema.define(:version => 20130513144347) do
   create_table "consumers", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.string   "password_digest"
     t.string   "remember_token"
-    t.boolean  "sadmin",          :default => false
-    t.boolean  "user_type",       :default => false
+    t.boolean  "sadmin",                 :default => false
+    t.boolean  "user_type",              :default => false
     t.integer  "phone_no"
     t.string   "address"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   add_index "consumers", ["email"], :name => "index_consumers_on_email", :unique => true
