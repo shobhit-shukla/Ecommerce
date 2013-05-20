@@ -21,6 +21,8 @@ Shobhit1::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  require 'tlsmail'
+  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
   config.action_mailer.default_url_options = { :host => 'polar-plains-2349.heroku.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
