@@ -23,7 +23,7 @@ Shobhit1::Application.configure do
 
   #require 'tlsmail'
   #Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
-  #config.action_mailer.default_url_options = { :host => 'polar-plains-2349.heroku.com' }
+  config.action_mailer.default_url_options = { :host => 'polar-plains-2349.heroku.com' }
 
   config.action_mailer.raise_delivery_errors = true;
   config.action_mailer.delivery_method = :smtp
