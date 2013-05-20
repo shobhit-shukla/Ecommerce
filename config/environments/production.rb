@@ -30,8 +30,8 @@ Shobhit1::Application.configure do
   config.action_mailer.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
-  :user_name            => 'testlinkites1@gmail.com',
-  :password             => 'developer1',
+  :user_name            => 'weblead@readythecatapult.com',
+  :password             => 'changemechange',
   :authentication       => 'plain',
   :enable_starttls_auto =>  true  }
   # Defaults to nil and saved in location specified by config.assets.prefix
