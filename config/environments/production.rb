@@ -29,8 +29,8 @@ Shobhit1::Application.configure do
    domain: "example.com",
    authentication: "plain",
    enable_starttls_auto: true,
-   user_name: "testlinkites1@gmail.com",
-   password: "developer1"
+   user_name: "shobhit.linkites@gmail.com",
+   password: "06032013"
   }
 
   # Defaults to nil and saved in location specified by config.assets.prefix
