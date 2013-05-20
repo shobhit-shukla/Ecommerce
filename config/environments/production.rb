@@ -21,8 +21,8 @@ Shobhit1::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  config.action_mailer.default_url_options = { :host => 'polar-plains-2349.heroku.com' }
-  config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.default_url_options = { :host => 'polar-plains-2349.heroku.com' }
+  #config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
    address: "smtp.gmail.com",
    port: 587,
