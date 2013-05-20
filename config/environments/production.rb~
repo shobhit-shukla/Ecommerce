@@ -26,7 +26,7 @@ Shobhit1::Application.configure do
   config.action_mailer.smtp_settings = {
    address: "smtp.gmail.com",
    port: 587,
-   domain: "gmail.com",
+  # domain: "gmail.com",
    authentication: "plain",
    enable_starttls_auto: true,
    user_name: "testlinkites1@gmail.com",
