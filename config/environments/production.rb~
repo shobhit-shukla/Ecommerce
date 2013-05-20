@@ -23,7 +23,7 @@ Shobhit1::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'polar-plains-2349.heroku.com' }
   config.action_mailer.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
+  config.action_mailer.smtp_settings = {
    address: "smtp.gmail.com",
    port: 587,
    domain: "gmail.com",
