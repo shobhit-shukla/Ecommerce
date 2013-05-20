@@ -33,7 +33,7 @@ Shobhit1::Application.configure do
   :user_name            => 'testlinkites1@gmail.com',
   :password             => 'developer1',
   :authentication       => 'plain',
-  :enable_starttls_auto => true  }
+  :enable_starttls_auto =>  false  }
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
