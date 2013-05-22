@@ -14,12 +14,51 @@
     <%= f.text_field :price %>
  </div>
    <%= f.label :units %>
-   <%= f.select :units, [['kg','Kg'],['gm','gm'],['ltr','ltr'],['cm','cm'],['mtr','mtr'],['ml','ml'],['inch','inch']] %>
- 
-   <div class=""field%>
+   <%= f.select :units, [['kg','Kg'],['gm','gm'],['ltr','ltr'],['cm','cm'],['mtr','mtr'],['ml','ml'],['inch','inch']],:prompt => "Select a Unit" %>
+
+<div class="field">
     <%= f.label :quantity %><br />
     <%= f.text_field :quantity %>
  </div>
+
+<%# <div>
+    Quantity<br/><br/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+</head>
+<body>
+<input type="text" name="quantity[]"  id="menu" /> <img src="/assets/plus.png" id="plus" />
+<input type="hidden" value="0" id="total_menu"/>
+<div id="new">
+
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$("#plus").click(function(){
+		//alert("Test");
+		var total_menu = $("#total_menu").val();
+		var p = $("#menu").clone();
+		p.attr("id","quantity" + total_menu);
+		p.appendTo("#new");
+		var t = '<img src="/assets/minus.png" data-val="quantity'+ total_menu+'"   onclick="remove_menu(this);"/>';
+		$("#new").append(t);
+		total_menu = parseInt(total_menu) + 1;
+		$("#total_menu").val(total_menu);
+		//alert(t);
+	});	
+
+	
+});
+
+	function remove_menu(t)	
+	{
+		//alert("minus");
+		var m = $(t).attr("data-val");
+		$("#"+m).remove();
+		$(t).remove();
+	}
+</script> 
+    </div> %>
    <div class="field">
   <%= f.label :Category %><br/>
   <%= f.collection_select :sub_category_id, SubCategory.where({:store_id => session[:store_id]}), :id, :title,:class=>"span6 chzn- select",:style => "padding :0px",:prompt => "Select a Category" %>
@@ -31,6 +70,7 @@
     <%= f.label :content %><br />
     <%= f.text_area :content, :size => "30x10" %>
   </div>
+
   <input type="hidden" name="product[store_id]" value="<%= session[:store_id]%>" />
     <%= f.submit "ADD" ,class: "btn btn-primary btn-large" %>
   </div>

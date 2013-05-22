@@ -2,7 +2,7 @@
 Name :<%=(@product.title) %><br/><br/>
 Our Price :<%= (@product.price) %><br/><br/>
 MRP :<%= (@product.mrp) %><br/><br/>
-QUANTITY :<%= (@product.quantity) %><%=(@product.units) %><br/><br/>
+QUANTITY :<%= (@product.quantity) %> &nbsp;<%=(@product.units) %><br/><br/>
 Description :<%= simple_format h(@product.content) %>
 
  <% unless @product.sub_category.nil? %>
