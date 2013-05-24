@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products=Product.where({:store_id => session[:store_id]})
+    @products = Product.paginate(:per_page => 2, :page => params[:page]).order('created_at DESC').where({:store_id => session[:store_id]})
   end
 
   def new
